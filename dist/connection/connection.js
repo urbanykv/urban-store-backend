@@ -5,8 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Produto = exports.connect = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
+const user_bd = process.env.USER_BD;
+const pass_bd = process.env.PASS_BD;
 const connect = () => {
-    mongoose_1.default.connect(`mongodb+srv://urbanykv:Jw7nB66QhTWGufKc@urbanstore.bi2aynu.mongodb.net/urban_store?retryWrites=true&w=majority`);
+    mongoose_1.default.connect(`mongodb+srv://${user_bd}:${pass_bd}@urbanstore.bi2aynu.mongodb.net/urban_store?retryWrites=true&w=majority`);
     const connection = mongoose_1.default.connection;
     connection.on("error", () => console.log("Erro ao conectar com o mongoDB"));
     connection.on("open", () => console.log("Conectado com o mongoDB"));
