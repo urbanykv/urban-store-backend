@@ -2,6 +2,7 @@ import express from 'express';
 import { router } from './routes';
 import { connect } from './connection/connection'; 
 
+const port = process.env.PORT;
 
 const app = express();
 
@@ -11,4 +12,4 @@ app.use(router);
 
 connect();
 
-app.listen(5000, () => console.log('server on'));
+app.listen(port, () => console.log('server on'));
