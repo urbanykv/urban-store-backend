@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
+import { config } from 'dotenv';
+config();
 
-const user_bd = process.env.USER_BD;
-const pass_bd = process.env.PASS_BD;
+const user = process.env.USER_BD;
+
+const pass = process.env.PASS_BD;
 
 export const connect = () => {
-  mongoose.connect(`mongodb+srv://${user_bd}:${pass_bd}@urbanstore.bi2aynu.mongodb.net/urban_store?retryWrites=true&w=majority`);
+  mongoose.connect(`mongodb+srv://${user}:${pass}@urbanstore.bi2aynu.mongodb.net/urban_store?retryWrites=true&w=majority`);
 
   const connection = mongoose.connection;
 
