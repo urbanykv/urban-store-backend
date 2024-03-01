@@ -24,6 +24,4 @@ const produtoSchema = new mongoose.Schema({
   imagem: { type: String, required: true}
 });
 
-
-
-export const Produto = mongoose.model("Produto", produtoSchema);
+export const Produto = mongoose.model("produtos", produtoSchema);
